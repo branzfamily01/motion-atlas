@@ -1,0 +1,13 @@
+{
+  "name": "Motion Atlas",
+  "short_name": "Motion Atlas",
+  "description": "見て選ぶ、比べる、調整する、AIへ伝える。AI時代のモーション設計ツール。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070b16",
+  "theme_color": "#0b1020",
+  "icons": [
+    {"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
