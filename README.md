@@ -2,33 +2,39 @@
 
 **Find it. Tune it. Tell AI.**
 
-アニメーション名を知らなくても、見て選び、比較し、速度・遅延・強さを調整して、AIへの実装指示とHTML/CSSをコピーできるモーション設計ツールです。
+52種類のWebモーションを、見て選び、比較し、調整して、AIへの実装指示やHTML/CSSとしてコピーする静的Webアプリです。
 
-## MVP features
+## Public URL
 
-- 50種類以上のオリジナルMotion
-- カテゴリ・目的・キーワード検索
-- 任意テキストでライブプレビュー
-- Restart
-- お気に入り（localStorage）
-- 最大4つの比較 / Sync Play
-- Duration / Delay / Intensity / Easing 調整
-- AI向け日本語実装指示の生成・コピー
-- HTML/CSS生成・コピー
-- `prefers-reduced-motion` を含むコード出力
-- PWA / オフラインキャッシュ
-- iPhoneを含むレスポンシブ対応
+https://branzfamily01.github.io/motion-atlas/
 
-## Technology
+## Manual
 
-HTML / CSS / vanilla JavaScript only. No external runtime dependency.
+https://branzfamily01.github.io/motion-atlas/manual.html
 
-## GitHub Pages
+## Main features
 
-`main` ブランチをGitHub Pagesで公開できます。`.github/workflows/pages.yml` はGitHub ActionsからPagesへデプロイする構成です。
+- 52 Motion patterns
+- TEXT / BUTTON / CARD / ENTER / SCROLL / FEEDBACK / BACKGROUND
+- Search and purpose filters
+- Custom preview text
+- Favorites saved in the browser
+- Up to 4-way synchronized comparison
+- Speed / Delay / Intensity / Easing controls
+- Copy-ready AI implementation instructions
+- Copy-ready HTML / CSS
+- PWA and offline cache including `manual.html`
+- `my-hub.json` for My Hub registration
 
-## License / references
+## Files
 
-アプリ本体のコードは独自実装です。公開されているモーション・コンポーネントカタログの「見て選ぶ」「調整する」「コピーする」という設計原理を参考にしていますが、第三者のアニメーションコードは同梱していません。
+- `index.html` — app entry point
+- `styles.css` — app styles
+- `app.js` — UI and state
+- `motion-data.js` — motion catalog
+- `motion-engine.js` — preview/export engine
+- `manual.html` — official user manual
+- `my-hub.json` — My Hub metadata
+- `manifest.webmanifest` / `sw.js` — PWA/offline support
 
-MIT License
+No third-party animation code is bundled.
