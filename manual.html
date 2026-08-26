@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <title>使い方 | Motion Atlas</title>
+  <style>
+    :root{--bg:#070b16;--panel:#0e1425;--panel2:#121a2f;--line:rgba(255,255,255,.10);--text:#f5f7ff;--muted:#a9b4ca;--accent:#9cffd0;--accent2:#8aa8ff;--warn:#ffd980;--radius:20px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at top,#101936 0,#070b16 36%,#050812 100%);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75;font-size:16px}a{color:inherit}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid rgba(156,255,208,.65);outline-offset:3px}
+    .top{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left));background:rgba(7,11,22,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:-.02em}.back{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 15px;border-radius:13px;background:#121a2f;border:1px solid var(--line);text-decoration:none;font-weight:800;font-size:14px}
+    main{width:min(900px,calc(100% - 28px));margin:auto;padding:34px 0 calc(70px + env(safe-area-inset-bottom))}.eyebrow{margin:0;color:var(--accent);font-weight:900;font-size:11px;letter-spacing:.17em}.hero h1{font-size:clamp(36px,9vw,66px);line-height:1.02;letter-spacing:-.055em;margin:10px 0 16px}.hero>p:last-child{color:var(--muted);max-width:700px;margin:0}.quick{margin:28px 0 22px;padding:22px;border:1px solid rgba(156,255,208,.25);background:linear-gradient(145deg,rgba(156,255,208,.10),rgba(138,168,255,.08));border-radius:24px}.quick h2{margin:0 0 16px;font-size:24px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.step{min-height:150px;padding:16px;border-radius:17px;background:rgba(7,11,22,.58);border:1px solid var(--line)}.num{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#071017;font-weight:950;margin-bottom:12px}.step strong{display:block;margin-bottom:5px}.step span{font-size:14px;color:#c0c9db}
+    .toc{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 0 18px}.toc::-webkit-scrollbar{display:none}.toc a{white-space:nowrap;text-decoration:none;padding:9px 12px;border-radius:999px;background:#10182c;border:1px solid var(--line);font-size:12px;color:#c9d2e6}
+    section.card{scroll-margin-top:78px;margin:14px 0;padding:22px;border-radius:22px;background:linear-gradient(180deg,rgba(17,25,47,.92),rgba(10,15,29,.96));border:1px solid var(--line)}h2{font-size:25px;line-height:1.25;margin:0 0 14px;letter-spacing:-.025em}h3{font-size:18px;margin:22px 0 8px}.lead{color:#c5cede;margin-top:-5px}.list{margin:12px 0 0;padding-left:22px}.list li{margin:8px 0}.ui{font-weight:900;color:#fff;border:1px solid rgba(255,255,255,.12);background:#111a31;padding:.1em .45em;border-radius:7px;white-space:nowrap}.note{margin:16px 0;padding:14px 15px;border-left:4px solid var(--accent);background:rgba(156,255,208,.07);border-radius:0 13px 13px 0;color:#d7e1ed}.warn{border-left-color:var(--warn);background:rgba(255,217,128,.07)}
+    .screen{margin:16px 0;padding:16px;border:1px solid var(--line);border-radius:18px;background:#090e1c}.screen-head{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.fake{padding:7px 10px;background:#111a31;border:1px solid var(--line);border-radius:10px;font-size:12px;font-weight:800}.fake.main{background:linear-gradient(135deg,#dfffee,#b9cbff);color:#071017}.screen-box{display:grid;place-items:center;min-height:112px;border-radius:15px;background:radial-gradient(circle,rgba(138,168,255,.13),transparent 70%);font-weight:900;font-size:26px}.arrow{text-align:center;color:var(--accent);font-size:24px;margin:4px 0}
+    .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.feature{padding:15px;border-radius:15px;background:#0a1020;border:1px solid var(--line)}.feature strong{display:block}.feature span{display:block;color:var(--muted);font-size:14px;margin-top:4px}details{border-top:1px solid var(--line);padding:13px 0}details:first-of-type{border-top:0}summary{cursor:pointer;font-weight:850}details p{color:#c0c9db;margin:10px 0 0}.term{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.term:last-child{border-bottom:0}.term strong{color:var(--accent)}.toplink{display:flex;justify-content:center;margin-top:22px}.toplink a{text-decoration:none;color:var(--muted);padding:12px}
+    @media(max-width:650px){body{font-size:16px}.steps,.feature-grid{grid-template-columns:1fr}.step{min-height:0}.quick,section.card{padding:18px}.hero h1{font-size:43px}.term{grid-template-columns:1fr;gap:2px}.top .brand{font-size:14px}.back{padding:0 12px}.screen-box{font-size:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body id="top">
+<header class="top"><div class="brand">Motion Atlas · 使い方</div><a class="back" href="./">← アプリへ戻る</a></header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">OFFICIAL MANUAL</p>
+    <h1>見て選び、<br>AIへ渡す。</h1>
+    <p>Motion Atlasは、Webページの「動き」を目で見ながら選ぶアプリです。名前を知らないアニメーションでも、実際に動かして比較し、AIへの指示文やHTML/CSSとしてコピーできます。</p>
+  </section>
+
+  <section class="quick" id="quick">
+    <h2>まずこれだけ</h2>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><strong>動きを見る</strong><span>一覧のカードを見ます。右下の ↻ で何度でも再生できます。</span></div>
+      <div class="step"><span class="num">2</span><strong>「調整する」を押す</strong><span>SpeedやIntensityを変えて、自分がほしい動きに近づけます。</span></div>
+      <div class="step"><span class="num">3</span><strong>AIへ渡す</strong><span><span class="ui">AIへの指示をコピー</span>を押し、ChatGPTなどに貼り付けます。</span></div>
+    </div>
+  </section>
+
+  <nav class="toc" aria-label="ページ内目次">
+    <a href="#about">何をする？</a><a href="#screen">画面の見方</a><a href="#how">使い方</a><a href="#features">できること</a><a href="#data">データ</a><a href="#undo">間違えたとき</a><a href="#trouble">困ったとき</a><a href="#iphone">スマホ</a><a href="#terms">用語集</a>
+  </nav>
+
+  <section class="card" id="about"><h2>① このアプリは何をするもの？</h2><p class="lead">WebアプリやWebページに使うアニメーションを、<strong>コードの名前を知らなくても目で探せる</strong>道具です。</p><div class="note">「ふわっと出したい」「高級感がほしい」「完了を分かりやすくしたい」のような感覚から探せます。</div></section>
+
+  <section class="card" id="screen"><h2>② 画面の見方</h2>
+    <div class="screen"><div class="screen-head"><span class="fake">？ 使い方</span><span class="fake">♡ 0</span><span class="fake">Compare 0</span></div><div class="screen-box">Motion Atlas</div><div class="arrow">↓</div><div class="screen-head"><span class="fake">高級感</span><span class="fake">目立たせる</span><span class="fake">TEXT</span><span class="fake">BUTTON</span></div></div>
+    <ul class="list">
+      <li><span class="ui">検索欄</span>：名前、雰囲気、用途で絞り込みます。</li>
+      <li><span class="ui">PREVIEW TEXT</span>：一覧で動かす文字を好きな内容に変えます。</li>
+      <li>「高級感」「楽しく」など：目的から絞り込みます。</li>
+      <li><span class="ui">TEXT</span> / <span class="ui">BUTTON</span> など：種類から絞り込みます。</li>
+      <li><span class="ui">♡</span>：お気に入りだけを表示します。数字は保存数です。</li>
+      <li><span class="ui">Compare</span>：比較に入れたMotionをまとめて見ます。</li>
+    </ul>
+  </section>
+
+  <section class="card" id="how"><h2>③ 使い方</h2>
+    <h3>A. まず動きを探す</h3><ol class="list"><li>一覧を見ます。</li><li>気になるカードの右下にある <span class="ui">↻</span> を押します。</li><li>もっと詳しく見るなら <span class="ui">調整する</span> を押します。</li></ol>
+    <h3>B. 動きを調整する</h3><ol class="list"><li><span class="ui">↻ Restart</span> で再生します。</li><li><span class="ui">Speed</span> で速さを変えます。</li><li><span class="ui">Delay</span> で始まるまでの待ち時間を変えます。</li><li><span class="ui">Intensity</span> で動きの強さを変えます。</li><li><span class="ui">Easing</span> で加速・減速の感触を変えます。</li></ol>
+    <h3>C. AIへ渡す</h3><ol class="list"><li>好みの状態にします。</li><li><span class="ui">AIへの指示をコピー</span> を押します。</li><li>ChatGPTなどの入力欄へ貼り付けます。</li></ol>
+    <div class="note">自分でWebページに貼りたい場合は <span class="ui">HTML / CSSをコピー</span> を使います。</div>
+    <h3>D. いくつかを比べる</h3><ol class="list"><li>カードの <span class="ui">＋ 比較</span> を押します。最大4つです。</li><li>画面下の <span class="ui">比較する</span>、または上部の <span class="ui">Compare</span> を押します。</li><li><span class="ui">▶ Sync Play</span> を押すと、選んだMotionが同時に再生されます。</li></ol>
+  </section>
+
+  <section class="card" id="features"><h2>④ できること一覧</h2><div class="feature-grid">
+    <div class="feature"><strong>52種類のMotion</strong><span>TEXT、BUTTON、CARD、ENTER、SCROLL、FEEDBACK、BACKGROUND。</span></div>
+    <div class="feature"><strong>目的から検索</strong><span>高級感、目立たせる、読みやすく、楽しく、完了、エラー、待機中。</span></div>
+    <div class="feature"><strong>お気に入り</strong><span>☆を押して、あとで候補だけ見られます。</span></div>
+    <div class="feature"><strong>最大4つ比較</strong><span>同じタイミングで再生して違いを見られます。</span></div>
+    <div class="feature"><strong>ライブ調整</strong><span>Speed / Delay / Intensity / Easingをその場で変更。</span></div>
+    <div class="feature"><strong>AI指示生成</strong><span>選んだ動きを自然言語の実装指示としてコピー。</span></div>
+    <div class="feature"><strong>HTML / CSSコピー</strong><span>実装用コードとして取り出せます。</span></div>
+    <div class="feature"><strong>オフライン利用</strong><span>一度オンラインで読み込めば、主要画面とこのマニュアルを再表示できます。</span></div>
+  </div></section>
+
+  <section class="card" id="data"><h2>⑤ データについて</h2><p class="lead">お気に入りなどは、<strong>このスマホ・PCのブラウザの中</strong>に保存します。</p>
+    <ul class="list"><li><strong>保存される：</strong>お気に入り、比較中のMotion、PREVIEW TEXT。</li><li><strong>保存されない：</strong>Speed / Delay / Intensity / Easingの詳細調整値。Motionを開き直すと初期値に戻ります。</li><li>ページを再読み込みしても、保存対象は残ります。</li><li>別のスマホやPCには自動で移りません。</li><li>ブラウザのサイトデータを削除すると、お気に入り等も消えます。</li></ul>
+    <details><summary>詳しく知りたい人向け</summary><p>保存にはブラウザの <strong>localStorage</strong> を使っています。アカウントや外部データベースへ送信する仕組みはありません。</p></details>
+  </section>
+
+  <section class="card" id="undo"><h2>⑥ 間違えたとき</h2><ul class="list"><li>お気に入りを間違えた → ★をもう一度押すと外せます。</li><li>比較に入れたものを外したい → <span class="ui">✓ 比較中</span> をもう一度押すか、比較画面の <span class="ui">削除</span> を押します。</li><li>比較を全部消したい → 画面下の <span class="ui">クリア</span> を押します。</li><li>検索で何も出なくなった → <span class="ui">条件をリセット</span> を押します。</li><li>調整をやり直したい → 詳細画面を閉じて、もう一度 <span class="ui">調整する</span> を押します。</li></ul></section>
+
+  <section class="card" id="trouble"><h2>⑦ 困ったとき</h2>
+    <details open><summary>動きが見えない / 再生が終わっている</summary><p><span class="ui">↻</span> または <span class="ui">↻ Restart</span> を押してください。端末の「視差効果を減らす」「モーションを減らす」設定によっては、一部の動きが控えめになります。</p></details>
+    <details><summary>「Compare」を押しても開かない</summary><p>先にカードの <span class="ui">＋ 比較</span> を1つ以上押してください。比較は最大4つです。</p></details>
+    <details><summary>コピーできない</summary><p>ブラウザのクリップボード権限が使えない場合でも、アプリは別のコピー方法を試します。それでも難しい場合はSafari/Chromeで開き直してください。</p></details>
+    <details><summary>前のお気に入りが消えた</summary><p>別の端末・別のブラウザを使っていないか確認してください。ブラウザの履歴・サイトデータを消した場合は復元できません。</p></details>
+    <details><summary>オフラインで初めて開けない</summary><p>最初の1回はオンラインでアプリを開く必要があります。その後、必要ファイルが端末に保存されます。</p></details>
+  </section>
+
+  <section class="card" id="iphone"><h2>⑧ スマホで使う方法</h2><h3>iPhoneのホーム画面に追加</h3><ol class="list"><li>SafariでMotion Atlasを開きます。</li><li>共有ボタンを押します。</li><li>「ホーム画面に追加」を選びます。</li><li>追加後は、普通のアプリのようにアイコンから開けます。</li></ol><div class="note warn">ホーム画面に追加する前に、一度オンラインでアプリと「？ 使い方」を開いておくと、通信できない場所でも確認しやすくなります。</div></section>
+
+  <section class="card" id="terms"><h2>⑨ 用語集</h2>
+    <div class="term"><strong>Motion</strong><span>画面上の「動き」やアニメーションのこと。</span></div>
+    <div class="term"><strong>Speed</strong><span>動きが終わるまでの速さ。値が小さいほど短時間で終わります。</span></div>
+    <div class="term"><strong>Delay</strong><span>動き始めるまで待つ時間。</span></div>
+    <div class="term"><strong>Intensity</strong><span>移動量や変化の強さ。</span></div>
+    <div class="term"><strong>Easing</strong><span>動き出し・止まり方の加速や減速の感触。</span></div>
+    <div class="term"><strong>HTML / CSS</strong><span>Webページの内容と見た目を作るためのコード。</span></div>
+    <div class="term"><strong>PWA</strong><span>Webサイトをホーム画面へ追加し、アプリのように使いやすくする仕組み。</span></div>
+    <div class="term"><strong>localStorage</strong><span>この端末のブラウザ内に小さなデータを保存する仕組み。</span></div>
+  </section>
+  <div class="toplink"><a href="#top">↑ ページの先頭へ戻る</a></div>
+</main>
+</body>
+</html>
