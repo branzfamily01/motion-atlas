@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "title": "Motion Atlas",
+  "category": "Tools",
+  "summary": "52種類のWebモーションを見て選び、比較・調整して、AI指示文やHTML/CSSとしてコピーできるモーション設計ツール。",
+  "tags": ["アニメーション", "CSS", "UI", "AI", "Web制作", "比較"],
+  "color": "blue",
+  "status": "active",
+  "visibility": "public",
+  "slug": "motion-atlas",
+  "githubRepo": "motion-atlas",
+  "repoUrl": "https://github.com/branzfamily01/motion-atlas",
+  "publicUrl": "https://branzfamily01.github.io/motion-atlas/",
+  "manualUrl": "https://branzfamily01.github.io/motion-atlas/manual.html",
+  "updatedAt": "2026-08-27"
+}
