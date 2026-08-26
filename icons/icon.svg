@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Motion Atlas">
+  <rect width="512" height="512" rx="112" fill="#070b16"/>
+  <rect x="70" y="70" width="372" height="372" rx="104" fill="#9cffd0"/>
+  <rect x="96" y="96" width="320" height="320" rx="88" fill="#8aa8ff"/>
+  <path d="M154 354V158h48l54 83 54-83h48v196h-42V227l-60 87-60-87v127z" fill="#070b16"/>
+</svg>
